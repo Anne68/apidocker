@@ -5,8 +5,8 @@ FROM python:3.10.6-buster
 COPY fast.py /app/fast.py
 COPY Pipfile /app/Pipfile
 COPY Pipfile.lock /app/Pipfile.lock
-COPY model.py /app/model.py
-COPY iris_model.joblib /app/iris_model.joblib
+#COPY model.py /app/model.py
+#COPY iris_model.joblib /app/iris_model.joblib
 
 
 # set the working directory in the container to be /app
