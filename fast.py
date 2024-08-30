@@ -1,6 +1,6 @@
 # 1. Library imports
 import uvicorn
-from apiannegit import FastAPI
+from fastapi import FastAPI
 
 # 2. Create the app object
 app = FastAPI()

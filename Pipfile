@@ -4,7 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-uvicorn = {extras = ["standard"], version = "*"}
+fastapi = "*"
+uvicorn = "*"
+joblib = "*"
+pylint = "*"
+pydantic = "*"
+coverage = "*"
+pandas = "*"
+numpy = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
