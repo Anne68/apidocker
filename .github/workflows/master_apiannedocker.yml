@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://apiannedocker.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_b5be7aa2dd1d4ff2865818c8085b91eb }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_a9b7de8f637f4cbb8b3ce7900b7e2bbb }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_aa0b2cff2e6c432caffadbce93c6ea87 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_838af9c94d1e4a59bba9478856aa3d08 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: apiannedocker.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_b5be7aa2dd1d4ff2865818c8085b91eb }}/fast:${{ github.sha }}
+        tags: apiannedocker.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_aa0b2cff2e6c432caffadbce93c6ea87 }}/apiannedocker/fast:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'apiannedocker'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_168e62bec28040b79c492c7f4170bd16 }}
-        images: 'apiannedocker.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_b5be7aa2dd1d4ff2865818c8085b91eb }}/fast:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fc41eefd6da640769e0b8c8481f118ea }}
+        images: 'apiannedocker.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_aa0b2cff2e6c432caffadbce93c6ea87 }}/apiannedocker/fast:${{ github.sha }}'
