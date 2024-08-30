@@ -17,12 +17,6 @@ WORKDIR /app
 RUN pip install pipenv
 RUN pipenv install --system --deploy --ignore-pipfile
 
-# Expose the port the app runs on
-EXPOSE 8000
-
-# Define environment variable
-ENV PORT 8000
-
 
 # execute the command python main.py (in the WORKDIR) to start the app
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "fast:app", "--bind", "0.0.0.0:8000"]
+CMD uvicorn apiannegit:app --host 0.0.0.0 --port $PORT
